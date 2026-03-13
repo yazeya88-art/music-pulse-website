@@ -204,6 +204,12 @@
       background: linear-gradient(135deg, var(--crimson-soft), var(--gold));
       transform: translateY(-2px);
     }
+    /* Book Now glow */
+    @keyframes glowPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(184,25,42,0); }
+      50% { box-shadow: 0 0 20px 6px rgba(184,25,42,0.5); }
+    }
+    .btn-primary { animation: glowPulse 2.5s ease-in-out infinite; }
     .btn-outline {
       padding: 0.9rem 2.4rem;
       background: transparent;
@@ -377,6 +383,14 @@
     .artist-card {
       position: relative; overflow: hidden;
       aspect-ratio: 3/4; cursor: pointer;
+      outline: 2px solid var(--gold);
+      outline-offset: 4px;
+      box-shadow: 0 0 0 6px rgba(212,168,71,0.08), 0 8px 40px rgba(0,0,0,0.5);
+      transition: outline-color 0.3s, box-shadow 0.3s;
+    }
+    .artist-card:hover {
+      outline-color: var(--gold-light);
+      box-shadow: 0 0 0 6px rgba(212,168,71,0.18), 0 0 30px rgba(212,168,71,0.25), 0 8px 40px rgba(0,0,0,0.6);
     }
     .artist-bg {
       position: absolute; inset: 0;
@@ -494,7 +508,25 @@
       background: rgba(255,255,255,0.02);
       position: relative; overflow: hidden;
       transition: all 0.4s;
+      background-size: cover;
+      background-position: center;
     }
+    /* Dark overlay over each venue bg */
+    .venue-card::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 0;
+      background: rgba(8,4,6,0.72);
+      transition: background 0.4s;
+    }
+    .venue-card:hover::before { background: rgba(8,4,6,0.55); }
+    .venue-card > * { position: relative; z-index: 1; }
+    /* Individual venue backgrounds */
+    .venue-hotel    { background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=600&q=80'); }
+    .venue-beach    { background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80'); }
+    .venue-rooftop  { background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80'); }
+    .venue-dining   { background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80'); }
+    .venue-corporate{ background-image: url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=600&q=80'); }
+    .venue-intl     { background-image: url('https://images.unsplash.com/photo-1512100356356-de1b84283e18?w=600&q=80'); }
     .venue-card::after {
       content: '';
       position: absolute; bottom: 0; left: 0; right: 0;
@@ -745,17 +777,17 @@
     <div class="beam"></div>
     <div class="beam"></div>
   </div>
-  <p class="hero-eyebrow">♩ Premium Live Entertainment ♩</p>
+  <p class="hero-eyebrow">✦ Now Available for Bookings ✦</p>
   <h1 class="hero-title">
     <span class="word-music">MUSIC</span>
     <span class="word-pulse">PULSE</span>
   </h1>
   <div class="hero-divider"></div>
-  <p class="hero-subtitle">Four-piece ensemble · 18 years of international stages</p>
-  <p class="hero-tagline">Elevating luxury venues with live music crafted for the finest stages</p>
+  <p class="hero-subtitle">Vocalist-Instrumentalists · 18 Years · Malaysia · India · China</p>
+  <p class="hero-tagline">The live band that transforms any venue into an unforgettable experience</p>
   <div class="hero-cta">
-    <a href="#artists" class="btn-primary">Meet the Artists</a>
-    <a href="#contact" class="btn-outline">Book a Performance</a>
+    <a href="#artists" class="btn-primary">See the Artists</a>
+    <a href="#contact" class="btn-outline">Book Now →</a>
   </div>
   <div class="scroll-hint">
     <span>Scroll</span>
@@ -764,11 +796,37 @@
 </section>
 
 <!-- ABOUT -->
+<div style="background: linear-gradient(135deg, var(--crimson), #8B0010, var(--crimson)); padding: 1rem 6vw; display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; border-bottom: 1px solid rgba(212,168,71,0.3);">
+  <div style="text-align:center;">
+    <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">18</div>
+    <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Years Experience</div>
+  </div>
+  <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+  <div style="text-align:center;">
+    <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">4</div>
+    <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Vocalist-Instrumentalists</div>
+  </div>
+  <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+  <div style="text-align:center;">
+    <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">3</div>
+    <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Countries Performed</div>
+  </div>
+  <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+  <div style="text-align:center;">
+    <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">21+</div>
+    <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Luxury Venues</div>
+  </div>
+  <div style="width:1px; background:rgba(255,255,255,0.2);"></div>
+  <div style="text-align:center;">
+    <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">✔</div>
+    <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Available Now</div>
+  </div>
+</div>
 <section class="about-section" id="about">
   <div class="about-grid">
     <div class="about-text reveal">
       <span class="section-label">Who We Are</span>
-      <h2 class="section-title">Professional <em>Elegance,</em><br>Live on Stage</h2>
+      <h2 class="section-title">The Band You'll Want to <em>Book Tonight</em></h2>
       <div class="title-bar"><div class="title-bar-line"></div><div class="title-bar-diamond"></div></div>
       <p>Music Pulse is a <strong>professional four-piece vocal and instrumental ensemble</strong> specialising in premium live entertainment for five-star hotels, luxury resorts, lounges, and upscale venues.</p>
       <p><strong>Based in the Philippines</strong> with 18 years of international performance experience across Malaysia, India, and China — we deliver sophisticated performances that elevate ambience while maintaining elegance and professionalism at every show.</p>
@@ -796,8 +854,8 @@
         <div class="stat-label">Countries — Malaysia · India · China</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">∞</div>
-        <div class="stat-label">Genres &amp; Repertoire Range</div>
+        <div class="stat-num">★★★★★</div>
+        <div class="stat-label">Venues We Have Performed In</div>
       </div>
     </div>
   </div>
@@ -890,35 +948,35 @@
 <section class="venues-section" id="venues">
   <div style="text-align:center; margin-bottom:3.5rem;" class="reveal">
     <span class="section-label">Where We Perform</span>
-    <h2 class="section-title">Ideal Venues <em>&amp; Settings</em></h2>
+    <h2 class="section-title">We Fit <em>Perfectly</em> Into Your Venue</h2>
   </div>
   <div class="venues-grid reveal">
-    <div class="venue-card">
+    <div class="venue-card venue-hotel">
       <span class="venue-icon">🏨</span>
       <h3>Five-Star Hotels</h3>
       <p>Lobby performances, grand ballrooms, and exclusive gala evenings for luxury hotel properties.</p>
     </div>
-    <div class="venue-card">
+    <div class="venue-card venue-beach">
       <span class="venue-icon">🌴</span>
       <h3>Beach Resorts</h3>
       <p>Sunset sets, poolside lounges, and outdoor terraces at premier resort destinations.</p>
     </div>
-    <div class="venue-card">
+    <div class="venue-card venue-rooftop">
       <span class="venue-icon">🍸</span>
       <h3>Rooftop Lounges</h3>
       <p>Intimate cocktail hours and evening entertainment for upscale bar and lounge venues.</p>
     </div>
-    <div class="venue-card">
+    <div class="venue-card venue-dining">
       <span class="venue-icon">🍽️</span>
       <h3>Fine Dining</h3>
       <p>Background ambience for Michelin-level dining experiences and upscale restaurant programs.</p>
     </div>
-    <div class="venue-card">
+    <div class="venue-card venue-corporate">
       <span class="venue-icon">🥂</span>
       <h3>Corporate Events</h3>
       <p>Product launches, gala dinners, award ceremonies, and high-profile corporate gatherings.</p>
     </div>
-    <div class="venue-card">
+    <div class="venue-card venue-intl">
       <span class="venue-icon">✈️</span>
       <h3>International</h3>
       <p>Based in the Philippines, Music Pulse has performed together across Malaysia, India, and China for 18 years — available for international residencies and events worldwide.</p>
@@ -945,7 +1003,7 @@
     </div>
     <div class="reveal">
       <div class="repertoire-quote">
-        <blockquote>"From the beaches of Malaysia to the grand hotels of China and India — 18 years of performing together across the world's finest stages."</blockquote>
+        <blockquote>"Every song chosen for your audience. Every night performed like it's our last. That's the Music Pulse standard — 18 years running."</blockquote>
         <div class="perf-list">
           <h4>✦ Where We Have Performed Together</h4>
           <ul>
@@ -981,11 +1039,11 @@
 <section class="contact-section" id="contact">
   <div class="contact-inner reveal">
     <span class="section-label">Get in Touch</span>
-    <h2 class="section-title">Book <em>Music Pulse</em></h2>
+    <h2 class="section-title">Ready to <em>Book Us?</em></h2>
     <div class="title-bar" style="justify-content:center; max-width:400px; margin: 0 auto 2rem;">
       <div class="title-bar-line"></div><div class="title-bar-diamond"></div><div class="title-bar-line" style="background: linear-gradient(to left, var(--gold), transparent);"></div>
     </div>
-    <p class="contact-cta-text">As a band, we have spent 18 years together on international stages across Malaysia, India, and China — adapting our sound and stage presence to every market and audience. Available for residencies, corporate events, and international contracts.</p>
+    <p class="contact-cta-text">Slots fill up fast. If you are looking for a live band that is professional, versatile, and proven across 18 years of international stages — <strong>reach out now.</strong> We respond quickly and are ready to discuss your event, dates, and requirements today.</p>
     <div class="contact-grid">
       <div class="contact-card">
         <p class="contact-label">Email</p>
@@ -1023,7 +1081,7 @@
   <br>
   <div class="contact-availability">
       <div class="avail-dot"></div>
-      Available for International Bookings
+      ● Accepting Bookings Now
     </div>
   </div>
 </section>
@@ -1031,7 +1089,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">MUSIC PULSE</div>
-  <div class="footer-tagline">Elegance in Every Note</div>
+  <div class="footer-tagline">Book Us — We Won't Disappoint</div>
   <div class="footer-copy">© 2025 Music Pulse · Refined Live Entertainment</div>
 </footer>
 
