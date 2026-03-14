@@ -88,8 +88,9 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center;
-      padding: 0 2rem;
+      padding: 8rem 2rem 6rem;
       position: relative; overflow: hidden;
+      z-index: 1;
     }
 
     /* Animated spotlight rings */
@@ -801,7 +802,7 @@
 </section>
 
 <!-- ABOUT -->
-<div style="background: linear-gradient(135deg, var(--crimson), #8B0010, var(--crimson)); padding: 1rem 6vw; display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; border-bottom: 1px solid rgba(212,168,71,0.3);">
+<div style="position:relative; z-index:1; background: linear-gradient(135deg, var(--crimson), #8B0010, var(--crimson)); padding: 1rem 6vw; display:flex; gap:3rem; justify-content:center; flex-wrap:wrap; border-bottom: 1px solid rgba(212,168,71,0.3);">
   <div style="text-align:center;">
     <div style="font-family:'Cormorant Upright',serif; font-size:1.6rem; color:var(--gold); font-weight:700;">18</div>
     <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Years Experience</div>
@@ -827,7 +828,7 @@
     <div style="font-size:0.6rem; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,0.8);">Available Now</div>
   </div>
 </div>
-<section class="about-section" id="about">
+<section class="about-section" id="about" style="position:relative; z-index:1;">
   <div class="about-grid">
     <div class="about-text reveal">
       <span class="section-label">Who We Are</span>
@@ -867,7 +868,7 @@
 </section>
 
 <!-- ARTISTS -->
-<section class="artists-section" id="artists">
+<section class="artists-section" style="position:relative; z-index:1;" id="artists">
   <div class="artists-header reveal">
     <span class="section-label">The Ensemble</span>
     <h2 class="section-title">Meet the <em>Artists</em></h2>
@@ -950,7 +951,7 @@
 </section>
 
 <!-- VENUES -->
-<section class="venues-section" id="venues">
+<section class="venues-section" style="position:relative; z-index:1;" id="venues">
   <div style="text-align:center; margin-bottom:3.5rem;" class="reveal">
     <span class="section-label">Where We Perform</span>
     <h2 class="section-title">We Fit <em>Perfectly</em> Into Your Venue</h2>
@@ -990,7 +991,7 @@
 </section>
 
 <!-- REPERTOIRE -->
-<section class="repertoire-section" id="repertoire">
+<section class="repertoire-section" style="position:relative; z-index:1;" id="repertoire">
   <div class="repertoire-inner">
     <div class="reveal">
       <span class="section-label">Musical Range</span>
@@ -1113,7 +1114,7 @@
 </section>
 
 <!-- CONTACT -->
-<section class="contact-section" id="contact">
+<section class="contact-section" style="position:relative; z-index:1;" id="contact">
   <div class="contact-inner reveal">
     <span class="section-label">Get in Touch</span>
     <h2 class="section-title">Ready to <em>Book Us?</em></h2>
