@@ -750,7 +750,11 @@
       .venues-grid { grid-template-columns: 1fr; }
       section { padding: 80px 5vw; }
     }
-  </style>
+  
+    @media (max-width: 600px) {
+      .video-grid { grid-template-columns: 1fr !important; }
+    }
+</style>
 </head>
 <body>
 
@@ -762,6 +766,7 @@
     <li><a href="#artists">Artists</a></li>
     <li><a href="#venues">Venues</a></li>
     <li><a href="#repertoire">Repertoire</a></li>
+    <li><a href="#videos">Videos</a></li>
     <li><a href="#contact">Book Us</a></li>
   </ul>
 </nav>
@@ -1031,6 +1036,78 @@
           </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- VIDEOS -->
+<section style="background: rgba(5,3,4,0.85); border-top: 1px solid rgba(212,168,71,0.2); padding: 110px 6vw;" id="videos">
+  <div style="max-width: 1000px; margin: 0 auto; text-align: center;">
+    <span class="section-label">Watch Us Perform</span>
+    <h2 class="section-title">Live <em>Performances</em></h2>
+    <div class="title-bar" style="justify-content:center; max-width:400px; margin: 0 auto 3rem;">
+      <div class="title-bar-line"></div>
+      <div class="title-bar-diamond"></div>
+      <div class="title-bar-line" style="background: linear-gradient(to left, var(--gold), transparent);"></div>
+    </div>
+
+    <!-- YouTube Videos Grid -->
+    <div class="reveal" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+
+      <div style="
+        position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+        border: 2px solid var(--gold);
+        outline: 4px solid rgba(212,168,71,0.15);
+        outline-offset: 4px;
+        box-shadow: 0 0 40px rgba(212,168,71,0.2);
+      ">
+        <iframe
+          src="https://www.youtube.com/embed/vzNGf_uPOHQ"
+          title="Music Pulse Live Performance 1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+
+      <div style="
+        position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;
+        border: 2px solid var(--gold);
+        outline: 4px solid rgba(212,168,71,0.15);
+        outline-offset: 4px;
+        box-shadow: 0 0 40px rgba(212,168,71,0.2);
+      ">
+        <iframe
+          src="https://www.youtube.com/embed/pkZy_dwj1rU"
+          title="Music Pulse Live Performance 2"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+        </iframe>
+      </div>
+
+    </div>
+
+    <!-- More videos note -->
+    <div class="reveal" style="
+      display: inline-flex; align-items: center; gap: 1rem;
+      padding: 1.4rem 2.5rem;
+      border: 1px solid rgba(212,168,71,0.3);
+      background: rgba(212,168,71,0.05);
+      max-width: 650px; width: 100%;
+    ">
+      <span style="font-size: 1.6rem;">🎬</span>
+      <span style="
+        font-family: 'Playfair Display', serif;
+        font-style: italic;
+        font-size: 0.95rem;
+        color: var(--warm-white);
+        line-height: 1.6;
+        text-align: left;
+      ">More videos of our live performances are available upon request — reach out via email, WhatsApp, or WeChat and we'll send them right away.</span>
     </div>
   </div>
 </section>
